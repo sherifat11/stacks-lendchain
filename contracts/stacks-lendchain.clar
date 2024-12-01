@@ -70,3 +70,11 @@
         (ok (/ a b))
         ERR-INVALID-AMOUNT)
 )
+
+;; Validation Functions
+(define-private (is-valid-loan-amount (amount uint))
+    (and 
+        (>= amount minimum-loan-amount)
+        (<= amount maximum-loan-amount)
+    )
+)
